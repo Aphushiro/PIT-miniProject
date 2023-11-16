@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2074113834582464625}
   - component: {fileID: 3107816667171157551}
   - component: {fileID: 3663878887596297216}
+  - component: {fileID: 6601803364095182289}
   m_Layer: 0
   m_Name: fish_rainbow
   m_TagString: Untagged
@@ -52,6 +53,7 @@ MonoBehaviour:
   swimSpeed: 2
   rotateSpeed: 0.3
   timeBetweenPickingNewPoint: 8
+  pausedSwimming: 0
 --- !u!54 &3107816667171157551
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -102,6 +104,27 @@ CapsuleCollider:
   m_Height: 1.2377357
   m_Direction: 2
   m_Center: {x: 0, y: 0, z: 0.030648708}
+--- !u!135 &6601803364095182289
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1920369733910698422}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 4.29
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &6952791364867357022
 PrefabInstance:
   m_ObjectHideFlags: 0

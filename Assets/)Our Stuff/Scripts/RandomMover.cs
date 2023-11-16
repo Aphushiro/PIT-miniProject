@@ -13,11 +13,13 @@ public class RandomMover : MonoBehaviour
 
     IEnumerator randomPointPicker;
     Rigidbody _rigidBody;
+    SphereCollider _sphereCollider;
     Vector3 _currentDirection, _rotatedDirection;
     float _singleStep, _originalRotateSpeed, _originalSwimSpeed;
     
     void Start()
     {
+        _sphereCollider = GetComponent<SphereCollider>();
         fishTankSettings = FindObjectOfType<FishTankSettings>();
         _rigidBody = GetComponent<Rigidbody>();
 
@@ -26,6 +28,7 @@ public class RandomMover : MonoBehaviour
         randomPointPicker = RandomPointPicker(timeBetweenPickingNewPoint);
         StartCoroutine(randomPointPicker);
         StartCoroutine(nameof(StopMoving));
+
     }
 
     private void FixedUpdate()
@@ -88,12 +91,17 @@ public class RandomMover : MonoBehaviour
         StopCoroutine(randomPointPicker);
         swimSpeed = _originalSwimSpeed;
         pausedSwimming = false;
+        _sphereCollider.enabled = false;
+        StartCoroutine(nameof(StopMoving));
+
     }
     private void StopFindingPoints()
     {
         StopCoroutine(randomPointPicker);
         swimSpeed = 0;
         pausedSwimming = true;
+        _sphereCollider.enabled = true;
+
     }
     private IEnumerator StopMoving() // Uses the "getRandomPosWithinBoundary" funbction to generate a random point every "timebetween" seconds.
     {
