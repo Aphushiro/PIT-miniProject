@@ -50,7 +50,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fishTankSettings: {fileID: 0}
   currentPoint: {x: -5.7895756, y: 7.033554, z: 4.7576256}
-  swimSpeed: 2
+  swimSpeed: 0.8
   rotateSpeed: 0.3
   timeBetweenPickingNewPoint: 8
   pausedSwimming: 0
