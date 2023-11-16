@@ -9,20 +9,23 @@ public class RandomMover : MonoBehaviour
     [SerializeField] Vector3 currentPoint; 
     [SerializeField] float swimSpeed = 3, rotateSpeed = 4;
     [SerializeField] float timeBetweenPickingNewPoint = 3;
+    [SerializeField] bool pausedSwimming = false;
 
     IEnumerator randomPointPicker;
     Rigidbody _rigidBody;
     Vector3 _currentDirection, _rotatedDirection;
-    float _singleStep, originalRotateSpeed, originalSwimSpeed;
+    float _singleStep, _originalRotateSpeed, _originalSwimSpeed;
     
     void Start()
     {
         fishTankSettings = FindObjectOfType<FishTankSettings>();
-        originalRotateSpeed = rotateSpeed;
-        originalSwimSpeed = swimSpeed;
+        _rigidBody = GetComponent<Rigidbody>();
+
+        _originalRotateSpeed = rotateSpeed;
+        _originalSwimSpeed = swimSpeed;
         randomPointPicker = RandomPointPicker(timeBetweenPickingNewPoint);
         StartCoroutine(randomPointPicker);
-        _rigidBody = GetComponent<Rigidbody>();
+        StartCoroutine(nameof(StopMoving));
     }
 
     private void FixedUpdate()
@@ -31,9 +34,17 @@ public class RandomMover : MonoBehaviour
 
         _currentDirection = (currentPoint - transform.position).normalized;
 
-
-        _rotatedDirection = Vector3.RotateTowards(transform.forward, _currentDirection, _singleStep,0);
-        transform.rotation = Quaternion.LookRotation(_rotatedDirection);
+        if(pausedSwimming )
+        {
+            _currentDirection.y = 0;
+            _rotatedDirection = Vector3.RotateTowards(transform.forward, _currentDirection, _singleStep, 0);
+            transform.rotation = Quaternion.LookRotation(_rotatedDirection);
+        }
+        else
+        {
+            _rotatedDirection = Vector3.RotateTowards(transform.forward, _currentDirection, _singleStep, 0);
+            transform.rotation = Quaternion.LookRotation(_rotatedDirection);
+        }
         _rigidBody.AddForce(transform.forward * swimSpeed, ForceMode.Force);
     }
 
@@ -44,6 +55,14 @@ public class RandomMover : MonoBehaviour
             yield return new WaitForSeconds(timeBetween);
            
             currentPoint = fishTankSettings.getRandomPosWithinBoundary();
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(pausedSwimming && other!= null)
+        {
+            StartFindingPoints();
         }
     }
     private void OnCollisionEnter(Collision collision) // if the fish hits something. This makes a new point in the other direction for it to travel to.
@@ -58,10 +77,30 @@ public class RandomMover : MonoBehaviour
 
     private void ResetRotateSpeed()
     {
-        rotateSpeed = originalRotateSpeed;
+        rotateSpeed = _originalRotateSpeed;
+    }
+
+
+
+    //--------------------------------------------- Making fish pause at places. So the player can more easily photograph them..
+    private void StartFindingPoints()
+    {
+        StopCoroutine(randomPointPicker);
+        swimSpeed = _originalSwimSpeed;
+        pausedSwimming = false;
     }
     private void StopFindingPoints()
     {
+        StopCoroutine(randomPointPicker);
         swimSpeed = 0;
+        pausedSwimming = true;
+    }
+    private IEnumerator StopMoving() // Uses the "getRandomPosWithinBoundary" funbction to generate a random point every "timebetween" seconds.
+    {
+
+            yield return new WaitForSeconds(Random.Range(10,20));
+
+            StopFindingPoints();
+ 
     }
 }

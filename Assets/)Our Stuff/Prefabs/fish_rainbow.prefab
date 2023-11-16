@@ -47,10 +47,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b40da45f9ca47944a8bc7442bce92ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fishTankSettings: {fileID: 0}
   currentPoint: {x: -5.7895756, y: 7.033554, z: 4.7576256}
-  debugPoint: {fileID: 3224473922366334153, guid: 9c265289c09e62148906860d6ce4704d, type: 3}
-  debugPointRed: {fileID: 0}
-  boxMaxLength: 10
   swimSpeed: 2
   rotateSpeed: 0.3
   timeBetweenPickingNewPoint: 8
@@ -168,6 +166,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 11100000, guid: 9b93a09590039e047827c4c7b41e52e6, type: 3}
+      propertyPath: m_Animation
+      value: 
+      objectReference: {fileID: 7400000, guid: b86923f600cd04648aa7b8d85104a3f1, type: 2}
+    - target: {fileID: 11100000, guid: 9b93a09590039e047827c4c7b41e52e6, type: 3}
+      propertyPath: m_Animations.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11100000, guid: 9b93a09590039e047827c4c7b41e52e6, type: 3}
+      propertyPath: m_Animations.Array.data[0]
+      value: 
+      objectReference: {fileID: 7400000, guid: b86923f600cd04648aa7b8d85104a3f1, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

@@ -2753,8 +2753,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd95015704d133d40b19bc2fd88f3841, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  debugPoint: {fileID: 0}
-  debugPointRed: {fileID: 0}
+  debugPoint: {fileID: 3224473922366334153, guid: 9c265289c09e62148906860d6ce4704d, type: 3}
+  debugPointRed: {fileID: 3224473922366334153, guid: 63bd69ed85e337d48ab2e2d96ea745be, type: 3}
   boxMaxLength: 10
 --- !u!4 &2087716117
 Transform:
