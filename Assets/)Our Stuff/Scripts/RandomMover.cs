@@ -73,6 +73,7 @@ public class RandomMover : MonoBehaviour
         //Alternatively the collider could be disabled for a while.. hmm..
     {
         currentPoint =  transform.position + ((transform.position - collision.GetContact(0).point).normalized) * 15;
+        if(currentPoint.y< 5) { currentPoint.y = 5; }
         rotateSpeed = 8;
         Invoke(nameof(ResetRotateSpeed), 1);
        Instantiate(fishTankSettings.debugPointRed, currentPoint, Quaternion.identity);

@@ -9,7 +9,7 @@ public class FishTankSettings : MonoBehaviour
 
     public Vector3 getRandomPosWithinBoundary() // Gets a random points within a boundary. The y is always above 2 so fish don't swim into the sand.
     {
-        Vector3 ranPos = new Vector3(Random.Range(-boxMaxLength, boxMaxLength), Random.Range(2, boxMaxLength), Random.Range(-boxMaxLength, boxMaxLength));
+        Vector3 ranPos = new Vector3(Random.Range(-boxMaxLength, boxMaxLength), Random.Range(4, boxMaxLength), Random.Range(-boxMaxLength, boxMaxLength));
         //  Instantiate(debugPoint, ranPos, Quaternion.identity);
         return ranPos;
     }
