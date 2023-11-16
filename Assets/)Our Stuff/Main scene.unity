@@ -513,17 +513,6 @@ MonoBehaviour:
   blendDistance: 0
   weight: 1
   sharedProfile: {fileID: 11400000, guid: 56a94d86da4440540901748091794d32, type: 2}
---- !u!114 &497070563 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7694894387376154417, guid: 611d80f3f4bbb3e41bb9f25767f999bf, type: 3}
-  m_PrefabInstance: {fileID: 846978260}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f418cdcdb3d8f324dae83dbe6e01b848, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &553904926
 GameObject:
   m_ObjectHideFlags: 0
@@ -1109,14 +1098,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Camera_tablet
       objectReference: {fileID: 0}
-    - target: {fileID: 7703946598355936276, guid: 611d80f3f4bbb3e41bb9f25767f999bf, type: 3}
-      propertyPath: m_Activated.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+    - target: {fileID: 7694894387376154417, guid: 611d80f3f4bbb3e41bb9f25767f999bf, type: 3}
+      propertyPath: leftcontroller
       value: 
-      objectReference: {fileID: 497070563}
-    - target: {fileID: 7703946598355936276, guid: 611d80f3f4bbb3e41bb9f25767f999bf, type: 3}
-      propertyPath: m_Activated.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: HapticCam
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 670977683}
+    - target: {fileID: 7694894387376154417, guid: 611d80f3f4bbb3e41bb9f25767f999bf, type: 3}
+      propertyPath: rightcontroller
+      value: 
+      objectReference: {fileID: 1102461324}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
