@@ -73,10 +73,10 @@ public class RandomMover : MonoBehaviour
         //Alternatively the collider could be disabled for a while.. hmm..
     {
         currentPoint =  transform.position + ((transform.position - collision.GetContact(0).point).normalized) * 15;
-        if(currentPoint.y< 5) { currentPoint.y = 5; }
-        rotateSpeed = 8;
-        Invoke(nameof(ResetRotateSpeed), 1);
-       Instantiate(fishTankSettings.debugPointRed, currentPoint, Quaternion.identity);
+        if(currentPoint.y< 3) { currentPoint.y = 3; }
+        rotateSpeed = 9;
+        Invoke(nameof(ResetRotateSpeed), 1.8f);
+       //Instantiate(fishTankSettings.debugPointRed, currentPoint, Quaternion.identity);
     }
 
     private void ResetRotateSpeed()
@@ -89,7 +89,7 @@ public class RandomMover : MonoBehaviour
     //--------------------------------------------- Making fish pause at places. So the player can more easily photograph them..
     private void StartFindingPoints()
     {
-        StopCoroutine(randomPointPicker);
+        StartCoroutine(randomPointPicker);
         swimSpeed = _originalSwimSpeed;
         pausedSwimming = false;
         _sphereCollider.enabled = false;
@@ -107,9 +107,20 @@ public class RandomMover : MonoBehaviour
     private IEnumerator StopMoving() // Uses the "getRandomPosWithinBoundary" funbction to generate a random point every "timebetween" seconds.
     {
 
-            yield return new WaitForSeconds(Random.Range(10,20));
+            yield return new WaitForSeconds(Random.Range(5,25));
 
             StopFindingPoints();
- 
+
+            StartCoroutine(nameof(StartMoving));
+
+    }
+
+    private IEnumerator StartMoving() // Uses the "getRandomPosWithinBoundary" funbction to generate a random point every "timebetween" seconds.
+    {
+
+        yield return new WaitForSeconds(Random.Range(10, 30));
+
+        StartFindingPoints();
+
     }
 }
