@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1436,6 +1436,10 @@ PrefabInstance:
       value: XR Device Simulator
       objectReference: {fileID: 0}
     - target: {fileID: 6598815579406187037, guid: 18ddb545287c546e19cc77dc9fbb2189, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6598815579406187037, guid: 18ddb545287c546e19cc77dc9fbb2189, type: 3}
       propertyPath: m_TagString
       value: EditorOnly
       objectReference: {fileID: 0}
@@ -2356,35 +2360,43 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6000505499055918967, guid: a5369885319bf0d46b97bf72ca6e0a7f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.256
+      value: 0.074
       objectReference: {fileID: 0}
     - target: {fileID: 6000505499055918967, guid: a5369885319bf0d46b97bf72ca6e0a7f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.263
+      value: -0.394
       objectReference: {fileID: 0}
     - target: {fileID: 6000505499055918967, guid: a5369885319bf0d46b97bf72ca6e0a7f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.528
+      value: 0.734
       objectReference: {fileID: 0}
     - target: {fileID: 6000505499055918967, guid: a5369885319bf0d46b97bf72ca6e0a7f, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.8886973
+      value: 0.9389893
       objectReference: {fileID: 0}
     - target: {fileID: 6000505499055918967, guid: a5369885319bf0d46b97bf72ca6e0a7f, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0.055920012
       objectReference: {fileID: 0}
     - target: {fileID: 6000505499055918967, guid: a5369885319bf0d46b97bf72ca6e0a7f, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.45849442
+      value: -0.33845618
       objectReference: {fileID: 0}
     - target: {fileID: 6000505499055918967, guid: a5369885319bf0d46b97bf72ca6e0a7f, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: 0.024892852
+      objectReference: {fileID: 0}
+    - target: {fileID: 6000505499055918967, guid: a5369885319bf0d46b97bf72ca6e0a7f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -5.058
       objectReference: {fileID: 0}
     - target: {fileID: 6000505499055918967, guid: a5369885319bf0d46b97bf72ca6e0a7f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: -54.58
+      value: -39.858
+      objectReference: {fileID: 0}
+    - target: {fileID: 6000505499055918967, guid: a5369885319bf0d46b97bf72ca6e0a7f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 4.872
       objectReference: {fileID: 0}
     - target: {fileID: 8955084022932559972, guid: a5369885319bf0d46b97bf72ca6e0a7f, type: 3}
       propertyPath: m_HideControllerOnSelect
