@@ -47,7 +47,7 @@ public class Swimmer : MonoBehaviour
                 _cooldownTimer = 0;
             }
         }
-        if(_rigidbody.velocity.sqrMagnitude > 0.01f)
+        if(_rigidbody.velocity.sqrMagnitude > 0)
         {
             _rigidbody.AddForce(-_rigidbody.velocity*dragForce, ForceMode.Acceleration);    
         }
