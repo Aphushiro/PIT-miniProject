@@ -16,5 +16,6 @@ The game was made for the Quest 2 VR headset. If you are to install the project 
 * XR interaction toolkit
 * XR plugin management
 * OpenXR plugin
+
 From there, you can build the project onto the headset using VR-link.
 You can also chose to build the project on your computer as an apk, and then upload it via. Tools such as “Sidequest”
